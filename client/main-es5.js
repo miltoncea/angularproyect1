@@ -593,10 +593,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditComponent", function() { return EditComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_proyect_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/proyect.service */ "./src/app/services/proyect.service.ts");
-/* harmony import */ var _services_upload_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/upload.service */ "./src/app/services/upload.service.ts");
-/* harmony import */ var _services_global__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/global */ "./src/app/services/global.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _models_proyect__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../models/proyect */ "./src/app/models/proyect.ts");
+/* harmony import */ var _services_proyect_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/proyect.service */ "./src/app/services/proyect.service.ts");
+/* harmony import */ var _services_upload_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/upload.service */ "./src/app/services/upload.service.ts");
+/* harmony import */ var _services_global__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/global */ "./src/app/services/global.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+
 
 
 
@@ -610,7 +612,8 @@ var EditComponent = /** @class */ (function () {
         this._route = _route;
         this._router = _router;
         this.title = 'Edicion de Proyecto';
-        this.url = _services_global__WEBPACK_IMPORTED_MODULE_4__["Global"].url;
+        this.proyect = new _models_proyect__WEBPACK_IMPORTED_MODULE_2__["Proyect"]('', '', '', '', 2019, '', '');
+        this.url = _services_global__WEBPACK_IMPORTED_MODULE_5__["Global"].url;
         console.log('constructor');
     }
     EditComponent.prototype.ngOnInit = function () {
@@ -638,7 +641,7 @@ var EditComponent = /** @class */ (function () {
             if (response.proyect) {
                 // subir imagen
                 if (_this.filesToUpload) {
-                    _this._uploadService.makeFileRequest(_services_global__WEBPACK_IMPORTED_MODULE_4__["Global"].url + "upload-image/" + response.proyect._id, [], _this.filesToUpload, "image")
+                    _this._uploadService.makeFileRequest(_services_global__WEBPACK_IMPORTED_MODULE_5__["Global"].url + "upload-image/" + response.proyect._id, [], _this.filesToUpload, "image")
                         .then(function (result) {
                         _this.status = "succes";
                         _this.save_proyect = response.proyect;
@@ -662,21 +665,21 @@ var EditComponent = /** @class */ (function () {
         this.filesToUpload = fileInput.target.files;
     };
     EditComponent.ctorParameters = function () { return [
-        { type: _services_upload_service__WEBPACK_IMPORTED_MODULE_3__["UploadService"] },
-        { type: _services_proyect_service__WEBPACK_IMPORTED_MODULE_2__["ProyectService"] },
-        { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"] },
-        { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] }
+        { type: _services_upload_service__WEBPACK_IMPORTED_MODULE_4__["UploadService"] },
+        { type: _services_proyect_service__WEBPACK_IMPORTED_MODULE_3__["ProyectService"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["ActivatedRoute"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"] }
     ]; };
     EditComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-edit',
             template: __webpack_require__(/*! raw-loader!../create-proyect/create-proyect.component.html */ "./node_modules/raw-loader/index.js!./src/app/components/create-proyect/create-proyect.component.html"),
-            providers: [_services_proyect_service__WEBPACK_IMPORTED_MODULE_2__["ProyectService"], _services_upload_service__WEBPACK_IMPORTED_MODULE_3__["UploadService"]],
+            providers: [_services_proyect_service__WEBPACK_IMPORTED_MODULE_3__["ProyectService"], _services_upload_service__WEBPACK_IMPORTED_MODULE_4__["UploadService"]],
             styles: [__webpack_require__(/*! ./edit.component.css */ "./src/app/components/edit/edit.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_upload_service__WEBPACK_IMPORTED_MODULE_3__["UploadService"], _services_proyect_service__WEBPACK_IMPORTED_MODULE_2__["ProyectService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_services_upload_service__WEBPACK_IMPORTED_MODULE_4__["UploadService"], _services_proyect_service__WEBPACK_IMPORTED_MODULE_3__["ProyectService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_6__["ActivatedRoute"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"]])
     ], EditComponent);
     return EditComponent;
 }());
@@ -1148,7 +1151,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\produccion-angular\proyecto-angular\client_dev\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\produccion-angular\client_dev\src\main.ts */"./src/main.ts");
 
 
 /***/ })

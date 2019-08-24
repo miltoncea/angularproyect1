@@ -598,8 +598,8 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\produccion-angular\proyecto-angular\client_dev\src\assets\css\styles.css */"./src/assets/css/styles.css");
-module.exports = __webpack_require__(/*! D:\produccion-angular\proyecto-angular\client_dev\src\assets\bxslider\dist\jquery.bxslider.min.css */"./src/assets/bxslider/dist/jquery.bxslider.min.css");
+__webpack_require__(/*! D:\produccion-angular\client_dev\src\assets\css\styles.css */"./src/assets/css/styles.css");
+module.exports = __webpack_require__(/*! D:\produccion-angular\client_dev\src\assets\bxslider\dist\jquery.bxslider.min.css */"./src/assets/bxslider/dist/jquery.bxslider.min.css");
 
 
 /***/ })
